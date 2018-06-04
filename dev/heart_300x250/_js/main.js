@@ -1,3 +1,6 @@
+import {size, slideIn, slideOut, init} from '../../_common/js/common.js'
+
+console.log();
 
 const el = {
 	t1a:{isLeft: false},
@@ -13,7 +16,6 @@ const el = {
 
 
 
-TweenLite.defaultEase = Power4.easeInOut
 const tl = new TimelineMax()
 
 function start() {
@@ -30,9 +32,9 @@ function start() {
 	
 
 	tl.add('f1_end', "+=1")
-	tl.to(el.t1a.img, timeOUT, slidOut(el.t1a),  'f1_end')
-	tl.to(el.t1b.img, timeOUT, slidOut(el.t1b),  'f1_end+=.1')
-	tl.to(el.t1c.img, timeOUT, slidOut(el.t1c),  'f1_end+=.2')
+	tl.to(el.t1a.img, timeOUT, slideOut(el.t1a),  'f1_end')
+	tl.to(el.t1b.img, timeOUT, slideOut(el.t1b),  'f1_end+=.1')
+	tl.to(el.t1c.img, timeOUT, slideOut(el.t1c),  'f1_end+=.2')
 	
 
 
@@ -45,9 +47,9 @@ function start() {
 	
 
 	tl.add('f2_end', "+=1")
-	tl.to(el.t2a.img, timeOUT, slidOut(el.t2a),  'f2_end')
-	tl.to(el.t2b.img, timeOUT, slidOut(el.t2b),  'f2_end+=.1')
-	tl.to(el.t2c.img, timeOUT, slidOut(el.t2c),  'f2_end+=.2')
+	tl.to(el.t2a.img, timeOUT, slideOut(el.t2a),  'f2_end')
+	tl.to(el.t2b.img, timeOUT, slideOut(el.t2b),  'f2_end+=.1')
+	tl.to(el.t2c.img, timeOUT, slideOut(el.t2c),  'f2_end+=.2')
 
 	
 
@@ -66,44 +68,12 @@ function start() {
 
 	tl.set('#legalBtn', {display: "block"})
 	
-	// tl.gotoAndPlay('f3_end')
-
 }
 
-function slideIn(el) {
-	
-	const {isLeft, img, dim} = el
-	const x = isLeft?"-":"+"
-	const y = isLeft>0 ? '+' : '-'
-	const obj =  {x:`${x}=${dim.w}`, y:`${y}=${30}`}	
-	return obj
-}
 
-function slidOut(el) {
-	const {isLeft, img, dim} = el
-	
-	const obj =  {x:`${"-"}=${dim.w}`, y:`${"+"}=${30}`, opacity:0}	
-	return obj
-}
-
-function init() {
-	
-	for(let key in el)	{
-		const item = el[key]
-		item.img = document.getElementById(key)
-		item.dim = {w:item.img.offsetWidth/2, h:item.img.offsetHeight/2}
-	}
-	
-}
 
 setTimeout(()=>{
-	init()
+	init(el)
 	start()	
-}, 100)
-
-
-
-
-
-module.exports = {};
+}, 10)
 
