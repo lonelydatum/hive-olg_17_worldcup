@@ -21,7 +21,7 @@ function start() {
 	var timeOUT = timeIN * .8;
 
 	tl.add('f1');
-	tl.from('#playa', .8, { ease: Power2.easeInOut, x: 0 }, 'f1');
+	tl.to('#playa', .8, { ease: Power2.easeInOut, x: -92 }, 'f1');
 	tl.set('.frame1', { opacity: 1 });
 
 	tl.from(el.t1a.img, timeIN, slideIn(el.t1a), '-=.2');
