@@ -10,6 +10,7 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 TweenLite.defaultEase = Power3.easeInOut;
 
 function slideIn(el) {
+	var timeIN = .45;
 	var isLeft = el.isLeft;
 	var img = el.img;
 	var dim = el.dim;
@@ -21,10 +22,16 @@ function slideIn(el) {
 	var right = isLeft ? 0 : dim.w * 2;
 	var left = !isLeft ? dim.w * 2 : 0;
 	var obj = { clip: "rect(0px," + right + "px," + dim.h * 2 + "px," + left + "px)" };
-	return obj;
+
+	var tlSlide = new TimelineMax();
+	tlSlide.from("#" + el.img.id + "_", timeIN, obj);
+	tlSlide.from(el.img, timeIN, obj, "-=" + timeIN * .4);
+
+	return tlSlide;
 }
 
 function slideOut(el) {
+	var timeIN = .3;
 	var isLeft = el.isLeft;
 	var img = el.img;
 	var dim = el.dim;
@@ -34,16 +41,26 @@ function slideOut(el) {
 	var right = isLeft ? 0 : dim.w * 2;
 	var left = !isLeft ? dim.w * 2 : 0;
 	var obj = { clip: "rect(0px," + right + "px," + dim.h * 2 + "px," + left + "px)" };
-	return obj;
+
+	var tlSlide = new TimelineMax();
+	tlSlide.to("#" + el.img.id + "_", timeIN, obj, 0);
+	tlSlide.to(el.img, timeIN, obj, 0);
+
+	return tlSlide;
 }
 
 function init(el) {
 
 	for (var key in el) {
 		var item = el[key];
+		console.log(key);
 		item.img = document.getElementById(key);
 		item.dim = { w: item.img.offsetWidth / 2, h: item.img.offsetHeight / 2 };
 		item.img.style.clip = "rect(0px," + item.dim.w * 2 + "px," + item.dim.h * 2 + "px,0px)";
+		var bg = document.getElementById(key + "_");
+		if (bg) {
+			bg.style.clip = "rect(0px," + item.dim.w * 2 + "px," + item.dim.h * 2 + "px,0px)";
+		}
 	}
 }
 
@@ -77,38 +94,36 @@ function start() {
 	var timeIN = .4;
 	var timeOUT = timeIN * .8;
 
-	TweenLite.to('#playa', 7, { ease: Sine.easeInOut, x: -129, y: -88 });
+	TweenLite.to('#playa', 8, { ease: Sine.easeInOut, x: -129, y: -88 });
 	tl.add('f1');
-	// tl.to('#playa', .8, {ease:Power2.easeInOut, x:-92}, 'f1')
+
 	tl.set('.frame1', { opacity: 1 });
 
-	tl.from(el.t1a.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t1a), '-=.2');
-	tl.from(el.t1b.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t1b));
-	tl.from(el.t1c.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t1c), "+=.4");
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t1a));
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t1b), '-=.2');
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t1c), '+=.2');
 
 	tl.add('f1_end', "+=1");
-	tl.to(el.t1a.img, timeOUT, (0, _commonJsCommonJs.slideOut)(el.t1a), 'f1_end');
-	tl.to(el.t1b.img, timeOUT, (0, _commonJsCommonJs.slideOut)(el.t1b), 'f1_end+=.1');
-	tl.to(el.t1c.img, timeOUT, (0, _commonJsCommonJs.slideOut)(el.t1c), 'f1_end+=.2');
+	tl.add((0, _commonJsCommonJs.slideOut)(el.t1a), 'f1_end');
+	tl.add((0, _commonJsCommonJs.slideOut)(el.t1b), 'f1_end-=.1');
+	tl.add((0, _commonJsCommonJs.slideOut)(el.t1c), 'f1_end-=.2');
 
 	tl.add('f2');
 	tl.set('.frame2', { opacity: 1 }, 'f2');
-	// tl.to('#playa', .7, {ease:Power2.easeInOut, x:-126, y:-72}, 'f2')
-	tl.from(el.t2a.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t2a), '-=.2');
-	tl.from(el.t2b.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t2b));
-	tl.from(el.t2c.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t2c));
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t2a));
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t2b), '-=.2');
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t2c), '-=.2');
 
-	tl.add('f2_end', "+=1.3");
-	tl.to(el.t2a.img, timeOUT, (0, _commonJsCommonJs.slideOut)(el.t2a), 'f2_end');
-	tl.to(el.t2b.img, timeOUT, (0, _commonJsCommonJs.slideOut)(el.t2b), 'f2_end+=.1');
-	tl.to(el.t2c.img, timeOUT, (0, _commonJsCommonJs.slideOut)(el.t2c), 'f2_end+=.2');
+	tl.add('f2_end', "+=1");
+	tl.add((0, _commonJsCommonJs.slideOut)(el.t2a), 'f2_end');
+	tl.add((0, _commonJsCommonJs.slideOut)(el.t2b), 'f2_end-=.1');
+	tl.add((0, _commonJsCommonJs.slideOut)(el.t2c), 'f2_end-=.2');
 
 	tl.add('f3');
 	tl.set('.frame3', { opacity: 1 }, 'f3');
-	// tl.to('#playa', .5, {ease:Power2.easeInOut, x:-129, y:-88}, 'f3')
-	tl.from(el.t3a.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t3a), '-=.2');
-	tl.from(el.t3b.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t3b));
-	tl.from(el.t3c.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t3c));
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t3a));
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t3b), '-=.2');
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t3c), '-=.2');
 
 	tl.add('f3_end', "+=.5");
 	tl.from('#footer', .5, { opacity: 0 }, "f3_end");
@@ -116,8 +131,6 @@ function start() {
 	tl.from('#cta', .5, { opacity: 0 }, '+=.3');
 
 	tl.set('#legalBtn', { display: "block" });
-
-	// tl.gotoAndPlay('f3_end')
 }
 
 setTimeout(function () {
