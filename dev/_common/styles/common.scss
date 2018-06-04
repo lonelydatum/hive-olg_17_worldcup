@@ -85,7 +85,7 @@ sup{
 }
 
 #legalBtn{
-	display:none;
+	// display:none;
 	z-index: 100;
 }
 
@@ -116,7 +116,9 @@ sup{
 	filter: drop-shadow(5px 5px 9px black);
 }
 
-
+#clicktag:hover + .frame3 #cta{
+	// opacity: .3;
+}
 
 
 #clicktag{

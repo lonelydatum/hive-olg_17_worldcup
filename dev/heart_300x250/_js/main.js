@@ -48,7 +48,7 @@ function start() {
 	tl.from(el.t2c.img, timeIN, slideIn(el.t2c) )
 	
 
-	tl.add('f2_end', "+=1")
+	tl.add('f2_end', "+=1.3")
 	tl.to(el.t2a.img, timeOUT, slideOut(el.t2a),  'f2_end')
 	tl.to(el.t2b.img, timeOUT, slideOut(el.t2b),  'f2_end+=.1')
 	tl.to(el.t2c.img, timeOUT, slideOut(el.t2c),  'f2_end+=.2')
@@ -69,6 +69,8 @@ function start() {
 	tl.from('#cta', .5, {opacity:0}, '+=.3')
 
 	tl.set('#legalBtn', {display: "block"})
+
+	// tl.gotoAndPlay('f3_end')
 	
 }
 
