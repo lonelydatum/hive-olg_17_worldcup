@@ -327,9 +327,9 @@ sup {
 }
 
 .frame3 .cta {
-  -webkit-transform: translate(94px, 219px) scale(0.5, 0.5);
-  -ms-transform: translate(94px, 219px) scale(0.5, 0.5);
-  transform: translate(94px, 219px) scale(0.5, 0.5);
+  -webkit-transform: translate(90px, 219px) scale(0.5, 0.5);
+  -ms-transform: translate(90px, 219px) scale(0.5, 0.5);
+  transform: translate(90px, 219px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
