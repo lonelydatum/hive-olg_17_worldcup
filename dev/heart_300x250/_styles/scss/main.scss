@@ -1,0 +1,75 @@
+
+
+@import '../../../_common/styles/common.scss';
+
+.playa{
+	// @include retina(-2, -49);
+	@include retina(-92, -49);
+	// @include retina(-126, -72);
+	// @include retina(-129, -88);
+}
+
+.frame1 {
+	// opacity: .5;
+	.t1a{
+		@include retina(52, 36);
+	}
+
+	.t1b{
+		@include retina(0, 95);
+	}
+
+	.t1c{
+		@include retina(52, 116);
+	}
+}
+
+.frame2{
+	// opacity: .5;
+
+	.t2a{
+		@include retina(99, -11);
+	}
+
+	.t2b{
+		@include retina(-3, 42);
+	}
+
+	.t2c{
+		@include retina(0, 100);
+	}
+}
+
+.frame3{
+	// opacity: .5;
+
+	.t3a{
+		@include retina(-1, 16);
+	}
+
+	.t3b{
+		@include retina(13, 34);
+	}
+
+	.t3c{
+		@include retina(148, 54);
+	}
+
+	.proline{
+		transform-origin: 50% 50%;
+		@include pos(92, 151);
+	}
+
+	.cta{
+		@include retina(94, 219);
+	}
+
+}
+
+
+
+#banner{	
+	width: 300px;
+	height: 250px;
+}
+

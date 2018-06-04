@@ -37,7 +37,12 @@ $property: transform;
 
 
 
-
+@mixin retina($x, $y) {  
+    @include pos-scale($x, $y, .5);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    position: absolute;
+}
 
 
 
