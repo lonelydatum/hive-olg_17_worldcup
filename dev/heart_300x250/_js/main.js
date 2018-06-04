@@ -59,7 +59,7 @@ function start() {
 	tl.from(el.t3c.img, timeIN, slideIn(el.t3c) )
 	
 
-	tl.add('f3_end', "+=.8")
+	tl.add('f3_end', "+=.5")
 	tl.from('#footer', .5, {opacity:0}, "f3_end")
 	tl.from('.proline', .5, {y:"+=90", opacity:0}, "f3_end")
 	tl.from('#cta', .5, {opacity:0}, '+=.3')
