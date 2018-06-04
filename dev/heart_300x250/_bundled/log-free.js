@@ -21,10 +21,10 @@ function start() {
 	var timeOUT = timeIN * .8;
 
 	tl.add('f1');
-	tl.from('#playa', .5, { ease: Power2.easeOut, x: 0 }, 'f1');
+	tl.from('#playa', .8, { ease: Power2.easeInOut, x: 0 }, 'f1');
 	tl.set('.frame1', { opacity: 1 });
 
-	tl.from(el.t1a.img, timeIN, slideIn(el.t1a));
+	tl.from(el.t1a.img, timeIN, slideIn(el.t1a), '-=.2');
 	tl.from(el.t1b.img, timeIN, slideIn(el.t1b));
 	tl.from(el.t1c.img, timeIN, slideIn(el.t1c), "+=.4");
 
@@ -35,7 +35,7 @@ function start() {
 
 	tl.add('f2');
 	tl.set('.frame2', { opacity: 1 }, 'f2');
-	tl.to('#playa', .5, { ease: Power2.easeOut, x: -126, y: -72 }, 'f2');
+	tl.to('#playa', .7, { ease: Power2.easeInOut, x: -126, y: -72 }, 'f2');
 	tl.from(el.t2a.img, timeIN, slideIn(el.t2a), '-=.2');
 	tl.from(el.t2b.img, timeIN, slideIn(el.t2b));
 	tl.from(el.t2c.img, timeIN, slideIn(el.t2c));
@@ -47,15 +47,15 @@ function start() {
 
 	tl.add('f3');
 	tl.set('.frame3', { opacity: 1 }, 'f3');
-	tl.to('#playa', .5, { ease: Power2.easeOut, x: -129, y: -88 }, 'f3');
+	tl.to('#playa', .5, { ease: Power2.easeInOut, x: -129, y: -88 }, 'f3');
 	tl.from(el.t3a.img, timeIN, slideIn(el.t3a), '-=.2');
 	tl.from(el.t3b.img, timeIN, slideIn(el.t3b));
 	tl.from(el.t3c.img, timeIN, slideIn(el.t3c));
 
-	tl.add('f3_end', "+=.5");
+	tl.add('f3_end', "+=.8");
 	tl.from('#footer', .5, { opacity: 0 }, "f3_end");
 	tl.from('.proline', .5, { y: "+=90", opacity: 0 }, "f3_end");
-	tl.from('#cta', .5, { opacity: 0 });
+	tl.from('#cta', .5, { opacity: 0 }, '+=.3');
 
 	// tl.gotoAndPlay('f3_end')
 }
@@ -89,8 +89,10 @@ function init() {
 	}
 }
 
-init();
-start();
+setTimeout(function () {
+	init();
+	start();
+}, 100);
 
 module.exports = {};
 
