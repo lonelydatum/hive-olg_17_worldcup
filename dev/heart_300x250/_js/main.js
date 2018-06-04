@@ -1,6 +1,5 @@
 import {size, slideIn, slideOut, init} from '../../_common/js/common.js'
 
-console.log();
 
 const el = {
 	t1a:{isLeft: false},
@@ -16,25 +15,22 @@ const el = {
 
 
 
-const tl = new TimelineMax()
+
 
 function start() {
-	const timeIN = .4
-	const timeOUT = timeIN * .8
+	const tl = new TimelineMax()
 	
-	TweenLite.to('#playa', 8, {ease:Sine.easeInOut, x:-129, y:-88})
-	tl.add('f1')
 	
+	TweenLite.to('#playa', 10, {ease:Power3.easeOut, x:-129, y:-88})
+	
+	tl.add('f1')	
 	tl.set('.frame1', {opacity: 1})
-	
-
-
 
 	tl.add( slideIn(el.t1a) )
 	tl.add( slideIn(el.t1b), '-=.2' )
-	tl.add( slideIn(el.t1c), '+=.2' )
+	tl.add( slideIn(el.t1c), '+=.1' )
 	
-	tl.add('f1_end', "+=1")
+	tl.add('f1_end', "+=1.5")
 	tl.add( slideOut(el.t1a), 'f1_end' )
 	tl.add( slideOut(el.t1b), 'f1_end-=.1' )
 	tl.add( slideOut(el.t1c), 'f1_end-=.2' )
@@ -45,7 +41,7 @@ function start() {
 	tl.add( slideIn(el.t2b), '-=.2' )
 	tl.add( slideIn(el.t2c), '-=.2' )
 
-	tl.add('f2_end', "+=1")
+	tl.add('f2_end', "+=1.5")
 	tl.add( slideOut(el.t2a), 'f2_end' )
 	tl.add( slideOut(el.t2b), 'f2_end-=.1' )
 	tl.add( slideOut(el.t2c), 'f2_end-=.2' )
@@ -63,10 +59,6 @@ function start() {
 	tl.from('#cta', .5, {opacity:0}, '+=.3')
 
 	tl.set('#legalBtn', {display: "block"})
-
-
-
-	
 	
 }
 

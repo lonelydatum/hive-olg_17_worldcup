@@ -25,7 +25,7 @@ function slideIn(el) {
 
 	var tlSlide = new TimelineMax();
 	tlSlide.from("#" + el.img.id + "_", timeIN, obj);
-	tlSlide.from(el.img, timeIN, obj, "-=" + timeIN * .4);
+	tlSlide.from(el.img, timeIN, obj, "-=" + timeIN * .6);
 
 	return tlSlide;
 }
@@ -53,7 +53,6 @@ function init(el) {
 
 	for (var key in el) {
 		var item = el[key];
-		console.log(key);
 		item.img = document.getElementById(key);
 		item.dim = { w: item.img.offsetWidth / 2, h: item.img.offsetHeight / 2 };
 		item.img.style.clip = "rect(0px," + item.dim.w * 2 + "px," + item.dim.h * 2 + "px,0px)";
@@ -74,8 +73,6 @@ exports.init = init;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-console.log();
-
 var el = {
 	t1a: { isLeft: false },
 	t1b: { isLeft: true },
@@ -88,22 +85,19 @@ var el = {
 	t3c: { isLeft: false }
 };
 
-var tl = new TimelineMax();
-
 function start() {
-	var timeIN = .4;
-	var timeOUT = timeIN * .8;
+	var tl = new TimelineMax();
 
-	TweenLite.to('#playa', 8, { ease: Sine.easeInOut, x: -129, y: -88 });
+	TweenLite.to('#playa', 10, { ease: Power3.easeOut, x: -129, y: -88 });
+
 	tl.add('f1');
-
 	tl.set('.frame1', { opacity: 1 });
 
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t1a));
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t1b), '-=.2');
-	tl.add((0, _commonJsCommonJs.slideIn)(el.t1c), '+=.2');
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t1c), '+=.1');
 
-	tl.add('f1_end', "+=1");
+	tl.add('f1_end', "+=1.5");
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1a), 'f1_end');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1b), 'f1_end-=.1');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1c), 'f1_end-=.2');
@@ -114,7 +108,7 @@ function start() {
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t2b), '-=.2');
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t2c), '-=.2');
 
-	tl.add('f2_end', "+=1");
+	tl.add('f2_end', "+=1.5");
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t2a), 'f2_end');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t2b), 'f2_end-=.1');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t2c), 'f2_end-=.2');

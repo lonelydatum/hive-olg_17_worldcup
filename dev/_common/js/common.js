@@ -16,7 +16,7 @@ function slideIn(el) {
 
 	const tlSlide = new TimelineMax()
 	tlSlide.from(`#${el.img.id}_`, timeIN, obj )
-	tlSlide.from(el.img, timeIN, obj, `-=${timeIN*.4}` )
+	tlSlide.from(el.img, timeIN, obj, `-=${timeIN*.6}` )
 
 	
 	return tlSlide
@@ -42,8 +42,7 @@ function slideOut(el) {
 function init(el) {
 	
 	for(let key in el)	{
-		const item = el[key]
-		console.log(key);
+		const item = el[key]		
 		item.img = document.getElementById(key)
 		item.dim = {w:item.img.offsetWidth/2, h:item.img.offsetHeight/2}
 		item.img.style.clip = `rect(0px,${item.dim.w*2}px,${item.dim.h*2}px,0px)`
@@ -52,7 +51,6 @@ function init(el) {
 			bg.style.clip = `rect(0px,${item.dim.w*2}px,${item.dim.h*2}px,0px)`
 		}
 	}
-	
 }
 
 
