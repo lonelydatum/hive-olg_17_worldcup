@@ -57,6 +57,8 @@ function start() {
 	tl.from('.proline', .5, { y: "+=90", opacity: 0 }, "f3_end");
 	tl.from('#cta', .5, { opacity: 0 }, '+=.3');
 
+	tl.set('#legalBtn', { display: "block" });
+
 	// tl.gotoAndPlay('f3_end')
 }
 
