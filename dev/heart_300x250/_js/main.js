@@ -19,16 +19,18 @@ const el = {
 const tl = new TimelineMax()
 
 function start() {
-	const timeIN = .35
+	const timeIN = .4
 	const timeOUT = timeIN * .8
 	
+	TweenLite.to('#playa', 7, {ease:Sine.easeInOut, x:-129, y:-88})
 	tl.add('f1')
-	tl.to('#playa', .8, {ease:Power2.easeInOut, x:-92}, 'f1')
+	// tl.to('#playa', .8, {ease:Power2.easeInOut, x:-92}, 'f1')
 	tl.set('.frame1', {opacity: 1})
 	
 	tl.from(el.t1a.img, timeIN, slideIn(el.t1a), '-=.2' )
 	tl.from(el.t1b.img, timeIN, slideIn(el.t1b) )
 	tl.from(el.t1c.img, timeIN, slideIn(el.t1c), "+=.4" )
+	
 	
 
 	tl.add('f1_end', "+=1")
@@ -40,7 +42,7 @@ function start() {
 
 	tl.add('f2')
 	tl.set('.frame2', {opacity: 1}, 'f2')
-	tl.to('#playa', .7, {ease:Power2.easeInOut, x:-126, y:-72}, 'f2')
+	// tl.to('#playa', .7, {ease:Power2.easeInOut, x:-126, y:-72}, 'f2')
 	tl.from(el.t2a.img, timeIN, slideIn(el.t2a), '-=.2' )
 	tl.from(el.t2b.img, timeIN, slideIn(el.t2b) )
 	tl.from(el.t2c.img, timeIN, slideIn(el.t2c) )
@@ -55,7 +57,7 @@ function start() {
 
 	tl.add('f3')
 	tl.set('.frame3', {opacity: 1}, 'f3')
-	tl.to('#playa', .5, {ease:Power2.easeInOut, x:-129, y:-88}, 'f3')
+	// tl.to('#playa', .5, {ease:Power2.easeInOut, x:-129, y:-88}, 'f3')
 	tl.from(el.t3a.img, timeIN, slideIn(el.t3a), '-=.2' )
 	tl.from(el.t3b.img, timeIN, slideIn(el.t3b) )
 	tl.from(el.t3c.img, timeIN, slideIn(el.t3c) )

@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
-TweenLite.defaultEase = Power2.easeInOut;
+TweenLite.defaultEase = Power3.easeInOut;
 
 function slideIn(el) {
 	var isLeft = el.isLeft;
@@ -16,7 +16,11 @@ function slideIn(el) {
 
 	var x = isLeft ? "-" : "+";
 	var y = isLeft > 0 ? '+' : '-';
-	var obj = { x: x + "=" + dim.w, y: y + "=" + 30 };
+	// const obj =  {x:`${x}=${dim.w}`, y:`${y}=${30}`}	
+
+	var right = isLeft ? 0 : dim.w * 2;
+	var left = !isLeft ? dim.w * 2 : 0;
+	var obj = { clip: "rect(0px," + right + "px," + dim.h * 2 + "px," + left + "px)" };
 	return obj;
 }
 
@@ -25,7 +29,11 @@ function slideOut(el) {
 	var img = el.img;
 	var dim = el.dim;
 
-	var obj = { x: "-" + "=" + dim.w, y: "+" + "=" + 30, opacity: 0 };
+	// const obj =  {x:`${"-"}=${dim.w}`, y:`${"+"}=${30}`, opacity:0}	
+
+	var right = isLeft ? 0 : dim.w * 2;
+	var left = !isLeft ? dim.w * 2 : 0;
+	var obj = { clip: "rect(0px," + right + "px," + dim.h * 2 + "px," + left + "px)" };
 	return obj;
 }
 
@@ -35,6 +43,7 @@ function init(el) {
 		var item = el[key];
 		item.img = document.getElementById(key);
 		item.dim = { w: item.img.offsetWidth / 2, h: item.img.offsetHeight / 2 };
+		item.img.style.clip = "rect(0px," + item.dim.w * 2 + "px," + item.dim.h * 2 + "px,0px)";
 	}
 }
 
@@ -65,11 +74,12 @@ var el = {
 var tl = new TimelineMax();
 
 function start() {
-	var timeIN = .35;
+	var timeIN = .4;
 	var timeOUT = timeIN * .8;
 
+	TweenLite.to('#playa', 7, { ease: Sine.easeInOut, x: -129, y: -88 });
 	tl.add('f1');
-	tl.to('#playa', .8, { ease: Power2.easeInOut, x: -92 }, 'f1');
+	// tl.to('#playa', .8, {ease:Power2.easeInOut, x:-92}, 'f1')
 	tl.set('.frame1', { opacity: 1 });
 
 	tl.from(el.t1a.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t1a), '-=.2');
@@ -83,7 +93,7 @@ function start() {
 
 	tl.add('f2');
 	tl.set('.frame2', { opacity: 1 }, 'f2');
-	tl.to('#playa', .7, { ease: Power2.easeInOut, x: -126, y: -72 }, 'f2');
+	// tl.to('#playa', .7, {ease:Power2.easeInOut, x:-126, y:-72}, 'f2')
 	tl.from(el.t2a.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t2a), '-=.2');
 	tl.from(el.t2b.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t2b));
 	tl.from(el.t2c.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t2c));
@@ -95,7 +105,7 @@ function start() {
 
 	tl.add('f3');
 	tl.set('.frame3', { opacity: 1 }, 'f3');
-	tl.to('#playa', .5, { ease: Power2.easeInOut, x: -129, y: -88 }, 'f3');
+	// tl.to('#playa', .5, {ease:Power2.easeInOut, x:-129, y:-88}, 'f3')
 	tl.from(el.t3a.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t3a), '-=.2');
 	tl.from(el.t3b.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t3b));
 	tl.from(el.t3c.img, timeIN, (0, _commonJsCommonJs.slideIn)(el.t3c));
