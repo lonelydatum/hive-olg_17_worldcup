@@ -368,9 +368,9 @@ sup {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transform: translate(81px, 146px) scale(1.2, 1.2);
-  -ms-transform: translate(81px, 146px) scale(1.2, 1.2);
-  transform: translate(81px, 146px) scale(1.2, 1.2);
+  -webkit-transform: translate(80px, 144px) scale(1, 1);
+  -ms-transform: translate(80px, 144px) scale(1, 1);
+  transform: translate(80px, 144px) scale(1, 1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
