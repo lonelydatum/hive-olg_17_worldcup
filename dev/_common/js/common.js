@@ -3,8 +3,8 @@ const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
 TweenLite.defaultEase = Power3.easeInOut
 
-function slideIn(el) {	
-	const timeIN = .45
+function slideIn(el, timeIN=.45) {	
+	
 	const {isLeft, img, dim} = el
 	const x = isLeft?"-":"+"
 	const y = isLeft>0 ? '+' : '-'

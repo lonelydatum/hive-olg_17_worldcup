@@ -10,7 +10,7 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 TweenLite.defaultEase = Power3.easeInOut;
 
 function slideIn(el) {
-	var timeIN = .45;
+	var timeIN = arguments.length <= 1 || arguments[1] === undefined ? .45 : arguments[1];
 	var isLeft = el.isLeft;
 	var img = el.img;
 	var dim = el.dim;
