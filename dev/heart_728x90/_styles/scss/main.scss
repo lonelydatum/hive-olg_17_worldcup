@@ -36,19 +36,21 @@
 .frame3{
 	// opacity: .5;
 
+	$x:53;
+
 	.t3a{
-		@include retina(28, 17);
+		@include retina(28+$x, 17);
 	}
 
 	
 
 	.proline{
 		transform-origin: 50% 50%;
-		@include pos(267, 11);
+		@include pos(267+$x, 11);
 	}
 
 	#cta{
-		@include pos(463, 33);
+		@include pos(463+$x, 33);
 		
 		background-color: #ffcc1f;
 		// border: 1px solid #ffcc1f;

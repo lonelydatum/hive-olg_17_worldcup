@@ -41,7 +41,7 @@ function start() {
 	
 	tl.add('f3_end', "+=.1")
 	tl.from('#footer', .5, {opacity:0}, "f3_end")
-	tl.from('.proline', .5, {y:"+=90", opacity:0}, "f3_end")
+	tl.from('.proline', .65, {y:"+=90", opacity:0}, "f3_end")
 	tl.from('#cta', .5, {opacity:0}, '+=.3')
 
 	tl.set('#legalBtn', {display: "block"})	
