@@ -89,7 +89,7 @@ function start() {
 	tl.set('.frame1', { opacity: 1 });
 
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t1a), 0);
-	tl.add((0, _commonJsCommonJs.slideIn)(el.t1b), 0);
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t1b), .2);
 
 	tl.add('f1_end', "+=1.5");
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1a), 'f1_end');

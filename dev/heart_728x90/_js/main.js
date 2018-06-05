@@ -19,7 +19,7 @@ function start() {
 	tl.set('.frame1', {opacity: 1})
 
 	tl.add( slideIn(el.t1a), 0 )
-	tl.add( slideIn(el.t1b), 0 )	
+	tl.add( slideIn(el.t1b), .2 )	
 	
 	tl.add('f1_end', "+=1.5")
 	tl.add( slideOut(el.t1a), 'f1_end' )
