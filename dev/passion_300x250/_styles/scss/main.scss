@@ -59,7 +59,7 @@
 
 	.proline{
 		transform-origin: 50% 50%;
-		@include pos(92, 151);
+		@include pos-scale(81, 146, 1.2);
 	}
 
 	#cta{
