@@ -12,27 +12,29 @@
 .frame1 {
 	// opacity: 1;
 	.t1a{
-		@include retina(52, 37);
+		@include retina(55, 29);
 	}
 
 	.t1b{
-		@include retina(0, 95);
+		@include retina(0, 85);
 	}
 
 	.t1c{
-		@include retina(52, 116);
+		@include retina(0, 99);
 	}
 }
 
 .frame2{
 	// opacity: 1;
 
+	
+
 	.t2a{
-		@include retina(55, 29);
+		@include retina(99, -11);
 	}
 
 	.t2b{
-		@include retina(0, 85);
+		@include retina(-3, 42);
 	}
 
 	.t2c{
