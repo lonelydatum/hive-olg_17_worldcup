@@ -1,0 +1,450 @@
+/*--------------------------------------------*/
+/* reset */
+/*--------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--------------------------------------------*/
+/* common */
+/*--------------------------------------------*/
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EFEFEF;
+}
+
+canvas {
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+#banner {
+  /* bigbox */
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  -webkit-text-size-adjust: 100%;
+  opacity: 1;
+  cursor: pointer;
+}
+
+canvas, .text, .frame, .outline, img {
+  position: absolute;
+}
+
+img {
+  vertical-align: top;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+}
+
+.outline {
+  z-index: 99;
+  width: inherit;
+  height: inherit;
+  border: 1px solid black;
+  pointer-events: none;
+  position: absolute;
+}
+
+.frame {
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+p {
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+sup {
+  font-size: 50%;
+  vertical-align: top;
+  position: relative;
+  left: -3px;
+}
+
+#legalBtn {
+  z-index: 100;
+}
+
+#legalBtn:hover ~ #legalContent {
+  opacity: 1;
+}
+
+#legalContent {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 15px;
+  font-size: 10px;
+  z-index: 90;
+  opacity: 0;
+  font-weight: normal;
+  line-height: 14px;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(5px 5px 9px black);
+  filter: drop-shadow(5px 5px 9px black);
+}
+
+#clicktag:hover + .frame3 #cta img#cta_text_1 {
+  opacity: 1;
+}
+
+#clicktag:hover + .frame3 #cta img#cta_text_0 {
+  opacity: 0;
+}
+
+#clicktag:hover + .frame3 #cta {
+  background-color: transparent;
+  border: 1px solid #ffcc1f;
+}
+
+#clicktag {
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  position: absolute;
+}
+
+.retina {
+  -webkit-transform: translate(0px, 0px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 0px) scale(0.5, 0.5);
+  transform: translate(0px, 0px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.playa {
+  -webkit-transform: translate(0px, -49px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, -49px) scale(0.5, 0.5);
+  transform: translate(0px, -49px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame1 .t1a {
+  -webkit-transform: translate(52px, 37px) scale(0.5, 0.5);
+  -ms-transform: translate(52px, 37px) scale(0.5, 0.5);
+  transform: translate(52px, 37px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame1 .t1b {
+  -webkit-transform: translate(0px, 95px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 95px) scale(0.5, 0.5);
+  transform: translate(0px, 95px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame1 .t1c {
+  -webkit-transform: translate(52px, 116px) scale(0.5, 0.5);
+  -ms-transform: translate(52px, 116px) scale(0.5, 0.5);
+  transform: translate(52px, 116px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame2 .t2a {
+  -webkit-transform: translate(55px, 29px) scale(0.5, 0.5);
+  -ms-transform: translate(55px, 29px) scale(0.5, 0.5);
+  transform: translate(55px, 29px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame2 .t2b {
+  -webkit-transform: translate(0px, 85px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 85px) scale(0.5, 0.5);
+  transform: translate(0px, 85px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame2 .t2c {
+  -webkit-transform: translate(0px, 99px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 99px) scale(0.5, 0.5);
+  transform: translate(0px, 99px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame3 .t3a {
+  -webkit-transform: translate(-1px, 18px) scale(0.5, 0.5);
+  -ms-transform: translate(-1px, 18px) scale(0.5, 0.5);
+  transform: translate(-1px, 18px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame3 .t3b {
+  -webkit-transform: translate(13px, 34px) scale(0.5, 0.5);
+  -ms-transform: translate(13px, 34px) scale(0.5, 0.5);
+  transform: translate(13px, 34px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame3 .t3c {
+  -webkit-transform: translate(148px, 54px) scale(0.5, 0.5);
+  -ms-transform: translate(148px, 54px) scale(0.5, 0.5);
+  transform: translate(148px, 54px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame3 .proline {
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate(92px, 151px);
+  -ms-transform: translate(92px, 151px);
+  transform: translate(92px, 151px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame3 #cta {
+  -webkit-transform: translate(89px, 218px);
+  -ms-transform: translate(89px, 218px);
+  transform: translate(89px, 218px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  background-color: #ffcc1f;
+  width: 121px;
+  height: 21px;
+  border-radius: 3px;
+}
+
+.frame3 #cta .cta_text {
+  -webkit-transform: translate(9px, 6px) scale(0.5, 0.5);
+  -ms-transform: translate(9px, 6px) scale(0.5, 0.5);
+  transform: translate(9px, 6px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.frame3 #cta #cta_text_1 {
+  opacity: 0;
+  -webkit-transform: translate(9px, 5px) scale(0.5, 0.5);
+  -ms-transform: translate(9px, 5px) scale(0.5, 0.5);
+  transform: translate(9px, 5px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+#legalBtn {
+  -webkit-transform: translate(1px, 202px);
+  -ms-transform: translate(1px, 202px);
+  transform: translate(1px, 202px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+  opacity: 1;
+  width: 36px;
+  height: 25px;
+  background-color: red;
+  opacity: 0;
+}
+
+#banner {
+  width: 300px;
+  height: 250px;
+}
+
+/*# sourceMappingURL=main.css.map */
