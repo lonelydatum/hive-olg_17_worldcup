@@ -100,7 +100,7 @@ function start() {
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t2a));
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t2b, .6), '-=.2');
 
-	tl.add('f2_end', "+=1.5");
+	tl.add('f2_end', "+=2");
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t2a), 'f2_end');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t2b), 'f2_end-=.1');
 

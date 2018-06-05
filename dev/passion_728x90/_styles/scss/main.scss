@@ -10,26 +10,27 @@
 }
 
 .frame1 {
-	// opacity: .5;
+	// opacity: 1;
 	.t1a{
-		@include retina(0, 5);
+		@include retina(0, 2);
 	}
 
 	.t1b{
-		@include retina(0, 13);
+		@include retina(0, 31);
 	}
 }
 
 .frame2{
-	// opacity: 1;
+	opacity: 1;
 
 	.t2a{
 		@include retina(0, 3);
 	}
 
 	.t2b{
-		@include retina(0, 36);
+		@include retina(0, 5);
 	}
+
 
 }
 
