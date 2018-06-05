@@ -154,7 +154,7 @@ sup {
   position: absolute;
   color: white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 15px;
+  padding: 10px;
   font-size: 10px;
   z-index: 90;
   opacity: 0;
@@ -253,25 +253,9 @@ sup {
 }
 
 .frame2 .t2a {
-  -webkit-transform: translate(0px, 3px) scale(0.5, 0.5);
-  -ms-transform: translate(0px, 3px) scale(0.5, 0.5);
-  transform: translate(0px, 3px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.frame2 .t2b {
-  -webkit-transform: translate(0px, 5px) scale(0.5, 0.5);
-  -ms-transform: translate(0px, 5px) scale(0.5, 0.5);
-  transform: translate(0px, 5px) scale(0.5, 0.5);
+  -webkit-transform: translate(-5px, 3px) scale(0.5, 0.5);
+  -ms-transform: translate(-5px, 3px) scale(0.5, 0.5);
+  transform: translate(-5px, 3px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

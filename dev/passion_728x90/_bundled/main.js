@@ -76,14 +76,14 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 var el = {
 	t1a: { isLeft: true },
 	t1b: { isLeft: true },
-	t2a: { isLeft: true },
-	t2b: { isLeft: true }
+	t2a: { isLeft: true }
+
 };
 
 function start() {
 	var tl = new TimelineMax();
 
-	TweenLite.to('#playa', 8, { ease: Power3.easeOut, x: -44 });
+	TweenLite.to('#playa', 10, { ease: Power2.easeOut, x: -44 });
 
 	tl.add('f1');
 	tl.set('.frame1', { opacity: 1 });
@@ -97,12 +97,12 @@ function start() {
 
 	tl.add('f2');
 	tl.set('.frame2', { opacity: 1 }, 'f2');
-	tl.add((0, _commonJsCommonJs.slideIn)(el.t2a));
-	tl.add((0, _commonJsCommonJs.slideIn)(el.t2b), '-=.2');
+	tl.add((0, _commonJsCommonJs.slideIn)(el.t2a, .5));
+	// tl.add( slideIn(el.t2b), '-=.2' )
 
 	tl.add('f2_end', "+=2");
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t2a), 'f2_end');
-	tl.add((0, _commonJsCommonJs.slideOut)(el.t2b), 'f2_end-=.1');
+	// tl.add( slideOut(el.t2b), 'f2_end-=.1' )
 
 	tl.add('f3');
 	tl.set('.frame3', { opacity: 1 }, 'f3');

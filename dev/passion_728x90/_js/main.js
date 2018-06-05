@@ -5,7 +5,7 @@ const el = {
 	t1a:{isLeft: true},
 	t1b:{isLeft: true},	
 	t2a:{isLeft: true},
-	t2b:{isLeft: true}	
+	
 }
 
 
@@ -13,7 +13,7 @@ const el = {
 function start() {
 	const tl = new TimelineMax()
 	
-	TweenLite.to('#playa', 8, {ease:Power3.easeOut, x:-44})
+	TweenLite.to('#playa', 10, {ease:Power2.easeOut, x:-44})
 	
 	tl.add('f1')	
 	tl.set('.frame1', {opacity: 1})
@@ -27,13 +27,13 @@ function start() {
 
 	tl.add('f2')
 	tl.set('.frame2', {opacity: 1}, 'f2')
-	tl.add( slideIn(el.t2a) )
-	tl.add( slideIn(el.t2b), '-=.2' )
+	tl.add( slideIn(el.t2a, .5) )
+	// tl.add( slideIn(el.t2b), '-=.2' )
 
 
 	tl.add('f2_end', "+=2")
 	tl.add( slideOut(el.t2a), 'f2_end' )
-	tl.add( slideOut(el.t2b), 'f2_end-=.1' )
+	// tl.add( slideOut(el.t2b), 'f2_end-=.1' )
 
 	tl.add('f3')
 	tl.set('.frame3', {opacity: 1}, 'f3')
