@@ -253,9 +253,9 @@ sup {
 }
 
 .frame2 .t2a {
-  -webkit-transform: translate(-5px, 3px) scale(0.5, 0.5);
-  -ms-transform: translate(-5px, 3px) scale(0.5, 0.5);
-  transform: translate(-5px, 3px) scale(0.5, 0.5);
+  -webkit-transform: translate(0px, 3px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 3px) scale(0.5, 0.5);
+  transform: translate(0px, 3px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

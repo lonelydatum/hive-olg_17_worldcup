@@ -5,18 +5,18 @@
 .frame1 {
 	// opacity: 1;
 	.t1a{
-		@include retina(4, 35);
+		@include retina(0, 35);
 	}	
 
 	.t1b{
-		@include retina(0, 99);
+		@include retina(0, 101);
 	}
 
 	.t1c{
-		@include retina(34, 126);
+		@include retina(19, 129);
 	}
 
 	.t1d{
-		@include retina(27, 172);
+		@include retina(4, 176);
 	}
 }
