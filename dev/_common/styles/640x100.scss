@@ -24,11 +24,11 @@
 	// opacity: .8;
 
 	.t2a{
-		@include retina(0, 12);
+		@include retina(0, -2);
 	}
 
 	.t2b{
-		@include retina(0, 14);
+		@include retina(0, 22);
 	}
 
 
