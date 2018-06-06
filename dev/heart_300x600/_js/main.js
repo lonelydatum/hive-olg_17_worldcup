@@ -33,7 +33,7 @@ function start() {
 	tl.add( slideIn(el.t1d), 0 )
 	
 	
-	tl.add('f1_end', "+=1.5")
+	tl.add('f1_end', "+=2.2")
 	tl.add( slideOut(el.t1a), 'f1_end' )
 	tl.add( slideOut(el.t1b), 'f1_end-=.1' )
 	tl.add( slideOut(el.t1c), 'f1_end-=.2' )

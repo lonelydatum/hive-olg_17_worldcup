@@ -99,7 +99,7 @@ function start() {
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t1c), 0);
 	tl.add((0, _commonJsCommonJs.slideIn)(el.t1d), 0);
 
-	tl.add('f1_end', "+=1.5");
+	tl.add('f1_end', "+=2.2");
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1a), 'f1_end');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1b), 'f1_end-=.1');
 	tl.add((0, _commonJsCommonJs.slideOut)(el.t1c), 'f1_end-=.2');
