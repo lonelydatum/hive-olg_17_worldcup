@@ -1,0 +1,54 @@
+@import '../../../_common/styles/common.scss';
+
+
+
+
+
+
+
+
+.frame1 {
+	// opacity: 1;
+	#proline{	
+		@include retina(202, 10);	
+	}
+
+	.t1{
+		@include retina(53, 8);
+	}
+	.t2{
+		@include retina(28, 12);
+	}
+	.t3{
+		@include retina(22, 12);
+	}
+
+	#cta{
+		@include retina(68, 31);		
+	}
+
+}
+
+.frame2{
+	// opacity: .8;
+
+	
+}
+
+.frame3{
+	// opacity: 0.8;
+	$x:0;
+
+	.t3a{
+		@include retina(28+$x, 22);
+	}
+
+	
+}
+
+
+#banner{	
+	width: 320px;
+	height: 50px;
+}
+
